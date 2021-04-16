@@ -17,7 +17,7 @@ echo '<!DOCTYPE html>
         <h1>IBM Cloud Container Registry Java SDK Documentation</h1>
     </div>
 
-    <p><a href="https://cloud.ibm.com/apidocs?category=container-registry">Container Registry Info</a>
+    <p><a href="https://cloud.ibm.com/apidocs/container-registry">Container Registry api-docs reference</a>
         | <a href="https://github.com/IBM/container-registry-java-sdk">GitHub</a>
     </p>
 
