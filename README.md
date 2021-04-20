@@ -74,11 +74,17 @@ Here are examples for maven and gradle:
     <artifactId>container-registry</artifactId>
     <version>0.1.0</version>
 </dependency>
+<dependency>
+    <groupId>com.ibm.cloud</groupId>
+    <artifactId>vulnerability-advisor</artifactId>
+    <version>0.1.0</version>
+</dependency>
 ```
 
 ### Gradle
 ```gradle
 'com.ibm.cloud:container-registry:0.1.0'
+'com.ibm.cloud:vulnerability-advisor:0.1.0'
 ```
 
 ## Using the SDK
