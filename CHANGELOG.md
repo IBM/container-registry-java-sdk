@@ -1,3 +1,11 @@
+## [0.1.1](https://github.com/IBM/container-registry-java-sdk/compare/0.1.0...0.1.1) (2021-04-20)
+
+
+### Bug Fixes
+
+* **project:** Fix up examples pom file ([7cd1ac2](https://github.com/IBM/container-registry-java-sdk/commit/7cd1ac2d7dcd7ff8e81c2f50cd9d53c6cfd68086))
+* **project:** Improve readme instructions to cover VA ([729a695](https://github.com/IBM/container-registry-java-sdk/commit/729a6958562d6074a18a635c173d2435cc6c576e))
+
 # [0.1.0](https://github.com/IBM/container-registry-java-sdk/compare/0.0.3...0.1.0) (2021-04-20)
 
 
