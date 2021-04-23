@@ -1,3 +1,10 @@
+## [0.1.2](https://github.com/IBM/container-registry-java-sdk/compare/0.1.1...0.1.2) (2021-04-23)
+
+
+### Bug Fixes
+
+* **common:** Correct naming of project files for user-agent derivation ([3153446](https://github.com/IBM/container-registry-java-sdk/commit/3153446b6b0f06fd63d9041d3d1832ad25a8208a))
+
 ## [0.1.1](https://github.com/IBM/container-registry-java-sdk/compare/0.1.0...0.1.1) (2021-04-20)
 
 
