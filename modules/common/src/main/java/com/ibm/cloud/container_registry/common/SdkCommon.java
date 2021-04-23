@@ -37,7 +37,7 @@ public class SdkCommon {
     private static String version;
 
     // >>> Replace "container-registry" with the parent project's artifactId (e.g. platform-services)
-    private static String parentArtifactId = "container-registry";
+    private static String parentArtifactId = "container-registry-parent";
 
     static {
         readBuildProperties();
