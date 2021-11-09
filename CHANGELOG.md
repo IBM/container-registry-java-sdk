@@ -1,3 +1,11 @@
+## [0.1.3](https://github.com/IBM/container-registry-java-sdk/compare/0.1.2...0.1.3) (2021-11-09)
+
+
+### Bug Fixes
+
+* **project:** Bump npm version used by semantic-release ([54377dc](https://github.com/IBM/container-registry-java-sdk/commit/54377dc38988605da5f52da8eec876cf183e4528))
+* **project:** Bump sdk-core-version ([ca17941](https://github.com/IBM/container-registry-java-sdk/commit/ca17941cf728027c09e230feb7d1bf3bf1862490))
+
 ## [0.1.2](https://github.com/IBM/container-registry-java-sdk/compare/0.1.1...0.1.2) (2021-04-23)
 
 
