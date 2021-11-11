@@ -396,7 +396,7 @@ public class ContainerRegistryIT extends SdkIntegrationTestBase {
 
       assertNotNull(resultResult);
 
-      double version = (double)(resultResult.get("schemaVersion"));
+      double version = ((Number)resultResult.get("schemaVersion")).doubleValue();
       double expected = 2;
       assertEquals(version, expected);
     } catch (ServiceResponseException e) {
