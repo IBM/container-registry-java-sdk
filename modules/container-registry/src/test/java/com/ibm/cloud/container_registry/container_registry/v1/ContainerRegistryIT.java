@@ -68,7 +68,6 @@ import com.ibm.cloud.sdk.core.http.Response;
 import com.ibm.cloud.sdk.core.service.exception.ServiceResponseException;
 import com.ibm.cloud.sdk.core.service.model.FileWithMetadata;
 import com.ibm.cloud.sdk.core.util.CredentialUtils;
-import com.google.gson.internal.LazilyParsedNumber;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
