@@ -1,3 +1,11 @@
+## [0.1.4](https://github.com/IBM/container-registry-java-sdk/compare/0.1.3...0.1.4) (2021-11-11)
+
+
+### Bug Fixes
+
+* **project:** Bump core SDK version again to fix class case issue ([37c37be](https://github.com/IBM/container-registry-java-sdk/commit/37c37be6b9c1abe41518cb759a541f294d6eeff8))
+* **tests:** Remove extraneous import ([ce57011](https://github.com/IBM/container-registry-java-sdk/commit/ce57011a3c5fc2f1240ae19fcc7b0d3776f32438))
+
 ## [0.1.3](https://github.com/IBM/container-registry-java-sdk/compare/0.1.2...0.1.3) (2021-11-09)
 
 
