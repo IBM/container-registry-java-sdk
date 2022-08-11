@@ -1,3 +1,10 @@
+## [0.1.5](https://github.com/IBM/container-registry-java-sdk/compare/0.1.4...0.1.5) (2022-08-11)
+
+
+### Bug Fixes
+
+* **project:** Resolve dependabot findings ([3511952](https://github.com/IBM/container-registry-java-sdk/commit/351195209edb332e892972cc9b8c38483920c16b))
+
 ## [0.1.4](https://github.com/IBM/container-registry-java-sdk/compare/0.1.3...0.1.4) (2021-11-11)
 
 
