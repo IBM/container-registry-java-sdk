@@ -1,5 +1,5 @@
 /*
- * (C) Copyright IBM Corp. 2021.
+ * (C) Copyright IBM Corp. 2023.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
  * the License. You may obtain a copy of the License at
@@ -29,6 +29,11 @@ public class TagImageOptions extends GenericModel {
     private String fromimage;
     private String toimage;
 
+    /**
+     * Instantiates a new Builder from an existing TagImageOptions instance.
+     *
+     * @param tagImageOptions the instance to initialize the Builder with
+     */
     private Builder(TagImageOptions tagImageOptions) {
       this.fromimage = tagImageOptions.fromimage;
       this.toimage = tagImageOptions.toimage;
@@ -82,6 +87,8 @@ public class TagImageOptions extends GenericModel {
       return this;
     }
   }
+
+  protected TagImageOptions() { }
 
   protected TagImageOptions(Builder builder) {
     com.ibm.cloud.sdk.core.util.Validator.notNull(builder.fromimage,

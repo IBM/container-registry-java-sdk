@@ -1,5 +1,5 @@
 /*
- * (C) Copyright IBM Corp. 2021.
+ * (C) Copyright IBM Corp. 2023.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
  * the License. You may obtain a copy of the License at
@@ -27,6 +27,11 @@ public class RestoreImageOptions extends GenericModel {
   public static class Builder {
     private String image;
 
+    /**
+     * Instantiates a new Builder from an existing RestoreImageOptions instance.
+     *
+     * @param restoreImageOptions the instance to initialize the Builder with
+     */
     private Builder(RestoreImageOptions restoreImageOptions) {
       this.image = restoreImageOptions.image;
     }
@@ -66,6 +71,8 @@ public class RestoreImageOptions extends GenericModel {
       return this;
     }
   }
+
+  protected RestoreImageOptions() { }
 
   protected RestoreImageOptions(Builder builder) {
     com.ibm.cloud.sdk.core.util.Validator.notEmpty(builder.image,

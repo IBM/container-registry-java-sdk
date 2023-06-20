@@ -1,5 +1,5 @@
 /*
- * (C) Copyright IBM Corp. 2021.
+ * (C) Copyright IBM Corp. 2023.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
  * the License. You may obtain a copy of the License at
@@ -27,6 +27,11 @@ public class DeleteNamespaceOptions extends GenericModel {
   public static class Builder {
     private String name;
 
+    /**
+     * Instantiates a new Builder from an existing DeleteNamespaceOptions instance.
+     *
+     * @param deleteNamespaceOptions the instance to initialize the Builder with
+     */
     private Builder(DeleteNamespaceOptions deleteNamespaceOptions) {
       this.name = deleteNamespaceOptions.name;
     }
@@ -66,6 +71,8 @@ public class DeleteNamespaceOptions extends GenericModel {
       return this;
     }
   }
+
+  protected DeleteNamespaceOptions() { }
 
   protected DeleteNamespaceOptions(Builder builder) {
     com.ibm.cloud.sdk.core.util.Validator.notEmpty(builder.name,

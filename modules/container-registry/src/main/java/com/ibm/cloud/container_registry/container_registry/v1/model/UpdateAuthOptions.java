@@ -1,5 +1,5 @@
 /*
- * (C) Copyright IBM Corp. 2021.
+ * (C) Copyright IBM Corp. 2023.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
  * the License. You may obtain a copy of the License at
@@ -29,6 +29,11 @@ public class UpdateAuthOptions extends GenericModel {
     private Boolean iamAuthz;
     private Boolean privateOnly;
 
+    /**
+     * Instantiates a new Builder from an existing UpdateAuthOptions instance.
+     *
+     * @param updateAuthOptions the instance to initialize the Builder with
+     */
     private Builder(UpdateAuthOptions updateAuthOptions) {
       this.iamAuthz = updateAuthOptions.iamAuthz;
       this.privateOnly = updateAuthOptions.privateOnly;
@@ -83,6 +88,8 @@ public class UpdateAuthOptions extends GenericModel {
       return this;
     }
   }
+
+  protected UpdateAuthOptions() { }
 
   protected UpdateAuthOptions(Builder builder) {
     iamAuthz = builder.iamAuthz;

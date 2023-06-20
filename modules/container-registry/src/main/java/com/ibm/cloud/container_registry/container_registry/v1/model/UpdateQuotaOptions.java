@@ -1,5 +1,5 @@
 /*
- * (C) Copyright IBM Corp. 2021.
+ * (C) Copyright IBM Corp. 2023.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
  * the License. You may obtain a copy of the License at
@@ -29,6 +29,11 @@ public class UpdateQuotaOptions extends GenericModel {
     private Long storageMegabytes;
     private Long trafficMegabytes;
 
+    /**
+     * Instantiates a new Builder from an existing UpdateQuotaOptions instance.
+     *
+     * @param updateQuotaOptions the instance to initialize the Builder with
+     */
     private Builder(UpdateQuotaOptions updateQuotaOptions) {
       this.storageMegabytes = updateQuotaOptions.storageMegabytes;
       this.trafficMegabytes = updateQuotaOptions.trafficMegabytes;
@@ -71,6 +76,8 @@ public class UpdateQuotaOptions extends GenericModel {
       return this;
     }
   }
+
+  protected UpdateQuotaOptions() { }
 
   protected UpdateQuotaOptions(Builder builder) {
     storageMegabytes = builder.storageMegabytes;

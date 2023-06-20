@@ -1,5 +1,5 @@
 /*
- * (C) Copyright IBM Corp. 2021.
+ * (C) Copyright IBM Corp. 2023.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
  * the License. You may obtain a copy of the License at
@@ -29,6 +29,11 @@ public class CreateNamespaceOptions extends GenericModel {
     private String name;
     private String xAuthResourceGroup;
 
+    /**
+     * Instantiates a new Builder from an existing CreateNamespaceOptions instance.
+     *
+     * @param createNamespaceOptions the instance to initialize the Builder with
+     */
     private Builder(CreateNamespaceOptions createNamespaceOptions) {
       this.name = createNamespaceOptions.name;
       this.xAuthResourceGroup = createNamespaceOptions.xAuthResourceGroup;
@@ -81,6 +86,8 @@ public class CreateNamespaceOptions extends GenericModel {
     }
   }
 
+  protected CreateNamespaceOptions() { }
+
   protected CreateNamespaceOptions(Builder builder) {
     com.ibm.cloud.sdk.core.util.Validator.notEmpty(builder.name,
       "name cannot be empty");
@@ -100,7 +107,7 @@ public class CreateNamespaceOptions extends GenericModel {
   /**
    * Gets the name.
    *
-   * The name of the namespace.
+   * The name of the namespace that you want to create.
    *
    * @return the name
    */
@@ -111,7 +118,7 @@ public class CreateNamespaceOptions extends GenericModel {
   /**
    * Gets the xAuthResourceGroup.
    *
-   * The ID of the resource group that the namespace will be created within.
+   * The ID of the resource group to which you want to add the namespace.
    *
    * @return the xAuthResourceGroup
    */

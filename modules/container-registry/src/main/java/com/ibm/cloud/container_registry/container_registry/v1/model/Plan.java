@@ -1,5 +1,5 @@
 /*
- * (C) Copyright IBM Corp. 2021.
+ * (C) Copyright IBM Corp. 2023.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
  * the License. You may obtain a copy of the License at
@@ -27,6 +27,11 @@ public class Plan extends GenericModel {
   public static class Builder {
     private String plan;
 
+    /**
+     * Instantiates a new Builder from an existing Plan instance.
+     *
+     * @param plan the instance to initialize the Builder with
+     */
     private Builder(Plan plan) {
       this.plan = plan.plan;
     }
@@ -57,6 +62,8 @@ public class Plan extends GenericModel {
       return this;
     }
   }
+
+  protected Plan() { }
 
   protected Plan(Builder builder) {
     plan = builder.plan;
