@@ -1,5 +1,5 @@
 /*
- * (C) Copyright IBM Corp. 2021.
+ * (C) Copyright IBM Corp. 2023.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
  * the License. You may obtain a copy of the License at
@@ -32,6 +32,8 @@ public class NamespaceDetails extends GenericModel {
   @SerializedName("updated_date")
   protected String updatedDate;
 
+  protected NamespaceDetails() { }
+
   /**
    * Gets the account.
    *
@@ -46,7 +48,7 @@ public class NamespaceDetails extends GenericModel {
   /**
    * Gets the createdDate.
    *
-   * When the namespace was created.
+   * The creation date of the namespace.
    *
    * @return the createdDate
    */
@@ -57,7 +59,7 @@ public class NamespaceDetails extends GenericModel {
   /**
    * Gets the crn.
    *
-   * If the namespace has been assigned to a resource group, this is the IBM Cloud CRN representing the namespace.
+   * If the namespace is assigned to a resource group, the IBM Cloud CRN representing the namespace.
    *
    * @return the crn
    */
@@ -77,7 +79,7 @@ public class NamespaceDetails extends GenericModel {
   /**
    * Gets the resourceCreatedDate.
    *
-   * When the namespace was assigned to a resource group.
+   * The date that the namespace was assigned to a resource group.
    *
    * @return the resourceCreatedDate
    */
@@ -88,7 +90,7 @@ public class NamespaceDetails extends GenericModel {
   /**
    * Gets the resourceGroup.
    *
-   * The resource group that the namespace is assigned to.
+   * The ID of the resource group to which the namespace is assigned.
    *
    * @return the resourceGroup
    */
@@ -99,7 +101,7 @@ public class NamespaceDetails extends GenericModel {
   /**
    * Gets the updatedDate.
    *
-   * When the namespace was last updated.
+   * The date that the namespace was last updated.
    *
    * @return the updatedDate
    */

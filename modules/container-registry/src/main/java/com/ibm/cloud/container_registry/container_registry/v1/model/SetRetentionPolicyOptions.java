@@ -1,5 +1,5 @@
 /*
- * (C) Copyright IBM Corp. 2021.
+ * (C) Copyright IBM Corp. 2023.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
  * the License. You may obtain a copy of the License at
@@ -31,6 +31,11 @@ public class SetRetentionPolicyOptions extends GenericModel {
     private Long imagesPerRepo;
     private Boolean retainUntagged;
 
+    /**
+     * Instantiates a new Builder from an existing SetRetentionPolicyOptions instance.
+     *
+     * @param setRetentionPolicyOptions the instance to initialize the Builder with
+     */
     private Builder(SetRetentionPolicyOptions setRetentionPolicyOptions) {
       this.namespace = setRetentionPolicyOptions.namespace;
       this.imagesPerRepo = setRetentionPolicyOptions.imagesPerRepo;
@@ -108,6 +113,8 @@ public class SetRetentionPolicyOptions extends GenericModel {
     }
   }
 
+  protected SetRetentionPolicyOptions() { }
+
   protected SetRetentionPolicyOptions(Builder builder) {
     com.ibm.cloud.sdk.core.util.Validator.notNull(builder.namespace,
       "namespace cannot be null");
@@ -139,7 +146,7 @@ public class SetRetentionPolicyOptions extends GenericModel {
   /**
    * Gets the imagesPerRepo.
    *
-   * Determines how many images will be retained for each repository when the retention policy is executed. The value -1
+   * Determines how many images are retained in each repository when the retention policy is processed. The value -1
    * denotes 'Unlimited' (all images are retained).
    *
    * @return the imagesPerRepo
@@ -151,8 +158,8 @@ public class SetRetentionPolicyOptions extends GenericModel {
   /**
    * Gets the retainUntagged.
    *
-   * Determines if untagged images are retained when executing the retention policy. This is false by default meaning
-   * untagged images will be deleted when the policy is executed.
+   * Determines whether untagged images are retained when the retention policy is processed. The value is false by
+   * default, which means that  untagged images can be deleted when the policy runs.
    *
    * @return the retainUntagged
    */

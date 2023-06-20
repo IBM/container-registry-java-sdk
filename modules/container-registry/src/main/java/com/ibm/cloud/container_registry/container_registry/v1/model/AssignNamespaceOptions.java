@@ -1,5 +1,5 @@
 /*
- * (C) Copyright IBM Corp. 2021.
+ * (C) Copyright IBM Corp. 2023.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
  * the License. You may obtain a copy of the License at
@@ -29,6 +29,11 @@ public class AssignNamespaceOptions extends GenericModel {
     private String xAuthResourceGroup;
     private String name;
 
+    /**
+     * Instantiates a new Builder from an existing AssignNamespaceOptions instance.
+     *
+     * @param assignNamespaceOptions the instance to initialize the Builder with
+     */
     private Builder(AssignNamespaceOptions assignNamespaceOptions) {
       this.xAuthResourceGroup = assignNamespaceOptions.xAuthResourceGroup;
       this.name = assignNamespaceOptions.name;
@@ -83,6 +88,8 @@ public class AssignNamespaceOptions extends GenericModel {
     }
   }
 
+  protected AssignNamespaceOptions() { }
+
   protected AssignNamespaceOptions(Builder builder) {
     com.ibm.cloud.sdk.core.util.Validator.notNull(builder.xAuthResourceGroup,
       "xAuthResourceGroup cannot be null");
@@ -104,7 +111,7 @@ public class AssignNamespaceOptions extends GenericModel {
   /**
    * Gets the xAuthResourceGroup.
    *
-   * The ID of the resource group that the namespace will be created within.
+   * The ID of the resource group to which you want to add the namespace.
    *
    * @return the xAuthResourceGroup
    */
@@ -115,7 +122,7 @@ public class AssignNamespaceOptions extends GenericModel {
   /**
    * Gets the name.
    *
-   * The name of the namespace to be updated.
+   * The name of the namespace that you want to udpate.
    *
    * @return the name
    */

@@ -1,5 +1,5 @@
 /*
- * (C) Copyright IBM Corp. 2021.
+ * (C) Copyright IBM Corp. 2023.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
  * the License. You may obtain a copy of the License at
@@ -36,6 +36,11 @@ public class ListImageDigestsOptions extends GenericModel {
     private Boolean includeIbm;
     private List<String> repositories;
 
+    /**
+     * Instantiates a new Builder from an existing ListImageDigestsOptions instance.
+     *
+     * @param listImageDigestsOptions the instance to initialize the Builder with
+     */
     private Builder(ListImageDigestsOptions listImageDigestsOptions) {
       this.excludeTagged = listImageDigestsOptions.excludeTagged;
       this.excludeVa = listImageDigestsOptions.excludeVa;
@@ -119,6 +124,8 @@ public class ListImageDigestsOptions extends GenericModel {
       return this;
     }
   }
+
+  protected ListImageDigestsOptions() { }
 
   protected ListImageDigestsOptions(Builder builder) {
     excludeTagged = builder.excludeTagged;

@@ -1,5 +1,5 @@
 /*
- * (C) Copyright IBM Corp. 2021.
+ * (C) Copyright IBM Corp. 2023.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
  * the License. You may obtain a copy of the License at
@@ -12,7 +12,7 @@
  */
 
 /*
- * IBM OpenAPI SDK Code Generator Version: 3.29.1-b338fb38-20210313-010605
+ * IBM OpenAPI SDK Code Generator Version: 3.73.0-eeee85a9-20230607-165104
  */
 
 package com.ibm.cloud.container_registry.container_registry.v1;
@@ -69,6 +69,7 @@ import com.ibm.cloud.sdk.core.security.Authenticator;
 import com.ibm.cloud.sdk.core.security.ConfigBasedAuthenticatorFactory;
 import com.ibm.cloud.sdk.core.service.BaseService;
 import com.ibm.cloud.sdk.core.util.ResponseConverterUtils;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -77,13 +78,60 @@ import java.util.Map.Entry;
 /**
  * Management interface for IBM Cloud Container Registry.
  *
- * @version v1
+ * API Version: 1.1
  */
 public class ContainerRegistry extends BaseService {
 
+  /**
+   * Default service name used when configuring the `ContainerRegistry` client.
+   */
   public static final String DEFAULT_SERVICE_NAME = "container_registry";
 
-  public static final String DEFAULT_SERVICE_URL = "https://us.icr.io";
+  /**
+   * Default service endpoint URL.
+   */
+  public static final String DEFAULT_SERVICE_URL = "https://icr.io";
+
+  private static final Map<String, String> _regionalEndpoints;
+  static {
+    Map<String, String> m = new HashMap<>();
+    m.put("global", "https://icr.io"); // global
+
+    m.put("us-south", "https://us.icr.io"); // us-south
+
+    m.put("uk-south", "https://uk.icr.io"); // uk-south
+
+    m.put("eu-gb", "https://uk.icr.io"); // eu-gb
+
+    m.put("eu-central", "https://de.icr.io"); // eu-central
+
+    m.put("eu-de", "https://de.icr.io"); // eu-de
+
+    m.put("ap-north", "https://jp.icr.io"); // ap-north
+
+    m.put("jp-tok", "https://jp.icr.io"); // jp-tok
+
+    m.put("ap-south", "https://au.icr.io"); // ap-south
+
+    m.put("au-syd", "https://au.icr.io"); // au-syd
+
+    m.put("jp-osa", "https://jp2.icr.io"); // jp-osa
+
+    m.put("ca-tor", "https://ca.icr.io"); // ca-tor
+
+    m.put("br-sao", "https://br.icr.io"); // br-sao
+    _regionalEndpoints = Collections.unmodifiableMap(m);
+  }
+
+  /**
+   * Returns the service URL associated with the specified region.
+   * @param region a string representing the region
+   * @return the service URL associated with the specified region or null
+   * if no mapping for the region exists
+   */
+  public static String getServiceUrlForRegion(String region) {
+    return _regionalEndpoints.get(region);
+  }
 
   private String account;
 
@@ -348,7 +396,8 @@ public class ContainerRegistry extends BaseService {
   /**
    * Create tag.
    *
-   * Create a new tag in a private registry that refers to an existing image in the same region.
+   * Create a new tag in a private registry that refers to an existing image in the same region. If the fromimage has
+   * Red Hat® signatures and the toimage is in a different repository, those signatures are copied to that repository.
    *
    * @param tagImageOptions the {@link TagImageOptions} containing the options for the call
    * @return a {@link ServiceCall} with a void result
