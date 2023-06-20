@@ -1,3 +1,13 @@
+# [1.0.0](https://github.com/IBM/container-registry-java-sdk/compare/0.1.5...1.0.0) (2023-06-20)
+
+
+* feat(upgrade) replace vav3 with vav4 ([d1f8bd8](https://github.com/IBM/container-registry-java-sdk/commit/d1f8bd8d38f858ae060c4cd95efa40247e0cb620))
+
+
+### BREAKING CHANGES
+
+* VA API V3 has been removed and replaced with VA V4
+
 ## [0.1.5](https://github.com/IBM/container-registry-java-sdk/compare/0.1.4...0.1.5) (2022-08-11)
 
 
