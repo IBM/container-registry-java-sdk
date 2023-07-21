@@ -117,6 +117,7 @@ public class ContainerRegistryTest {
     assertEquals(ContainerRegistry.getServiceUrlForRegion("jp-osa"), "https://jp2.icr.io");
     assertEquals(ContainerRegistry.getServiceUrlForRegion("ca-tor"), "https://ca.icr.io");
     assertEquals(ContainerRegistry.getServiceUrlForRegion("br-sao"), "https://br.icr.io");
+    assertEquals(ContainerRegistry.getServiceUrlForRegion("eu-fr2"), "https://fr2.icr.io");
   }
 
 
