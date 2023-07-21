@@ -1,3 +1,15 @@
+# [1.1.0](https://github.com/IBM/container-registry-java-sdk/compare/1.0.0...1.1.0) (2023-07-21)
+
+
+### Bug Fixes
+
+* **project:** Remediate vulnerability in semver ([d220ea2](https://github.com/IBM/container-registry-java-sdk/commit/d220ea2e4f5f18a6b8e81f731fb736879151b686))
+
+
+### Features
+
+* **project:** Add eu-fr2 endpoint ([62fc4d5](https://github.com/IBM/container-registry-java-sdk/commit/62fc4d53b98a7c5fd852032a7bf9d60f93022e5b))
+
 # [1.0.0](https://github.com/IBM/container-registry-java-sdk/compare/0.1.5...1.0.0) (2023-06-20)
 
 
