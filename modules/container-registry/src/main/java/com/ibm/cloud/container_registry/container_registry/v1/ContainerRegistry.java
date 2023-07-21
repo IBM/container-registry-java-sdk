@@ -12,7 +12,7 @@
  */
 
 /*
- * IBM OpenAPI SDK Code Generator Version: 3.73.0-eeee85a9-20230607-165104
+ * IBM OpenAPI SDK Code Generator Version: 3.75.0-726bc7e3-20230713-221716
  */
 
 package com.ibm.cloud.container_registry.container_registry.v1;
@@ -120,6 +120,8 @@ public class ContainerRegistry extends BaseService {
     m.put("ca-tor", "https://ca.icr.io"); // ca-tor
 
     m.put("br-sao", "https://br.icr.io"); // br-sao
+
+    m.put("eu-fr2", "https://fr2.icr.io"); // eu-fr2
     _regionalEndpoints = Collections.unmodifiableMap(m);
   }
 
