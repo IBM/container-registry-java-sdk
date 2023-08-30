@@ -2,10 +2,8 @@
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 
 # IBM Cloud Container Registry Java SDK Version 1.1.0
-Java client library to interact with the [IBM Cloud Container Registry API](https://cloud.ibm.com/apidocs/container-registry), and [IBM Cloud Container Registry Vulnerability Advisor API](https://cloud.ibm.com/apidocs/container-registry/va)
+Java client library to interact with the [IBM Cloud Container Registry API](https://cloud.ibm.com/apidocs/container-registry), and [IBM Cloud Container Registry Vulnerability Advisor API](https://cloud.ibm.com/apidocs/container-registry/va-v4)
 
-Disclaimer: this SDK is being released initially as a **pre-release** version.
-Changes might occur which impact applications that use this SDK.
 
 ## Table of Contents
 
@@ -42,7 +40,7 @@ The IBM Cloud Container Registry Java SDK allows developers to programmatically 
 Service Name | Artifact Coordinates
 --- | ---
 [Container Registry image management API](https://cloud.ibm.com/apidocs/container-registry) | com.ibm.cloud:container-registry:1.1.0
-[Container Registry Vulnerability Advisor API](https://cloud.ibm.com/apidocs/container-registry/va) | com.ibm.cloud:vulnerability-advisor:1.1.0
+[Container Registry Vulnerability Advisor API](https://cloud.ibm.com/apidocs/container-registry/va-v4) | com.ibm.cloud:vulnerability-advisor:1.1.0
 
 ## Prerequisites
 
