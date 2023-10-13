@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/IBM/container-registry-java-sdk/compare/1.1.0...1.1.1) (2023-10-13)
+
+
+### Bug Fixes
+
+* **project:** Remediate vulnerability in guava ([234c562](https://github.com/IBM/container-registry-java-sdk/commit/234c562b4eae8afd1aeead0e85b1b225309e8822))
+
 # [1.1.0](https://github.com/IBM/container-registry-java-sdk/compare/1.0.0...1.1.0) (2023-07-21)
 
 
