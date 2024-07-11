@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/IBM/container-registry-java-sdk/compare/1.1.1...1.1.2) (2024-07-11)
+
+
+### Bug Fixes
+
+* **project:** Upgrade micromatch for CVE-2024-4067 ([b3e1883](https://github.com/IBM/container-registry-java-sdk/commit/b3e1883b2fcf562aea805c57284d2e60ca511723))
+
 ## [1.1.1](https://github.com/IBM/container-registry-java-sdk/compare/1.1.0...1.1.1) (2023-10-13)
 
 
