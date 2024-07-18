@@ -1,3 +1,10 @@
+## [1.1.3](https://github.com/IBM/container-registry-java-sdk/compare/1.1.2...1.1.3) (2024-07-18)
+
+
+### Bug Fixes
+
+* **project:** Bump okhttp version for CVE-2023-0833 ([93f0aa1](https://github.com/IBM/container-registry-java-sdk/commit/93f0aa174ddc6042d5a6ee2670ab7bb49a31c83c))
+
 ## [1.1.2](https://github.com/IBM/container-registry-java-sdk/compare/1.1.1...1.1.2) (2024-07-11)
 
 
