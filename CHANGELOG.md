@@ -1,3 +1,10 @@
+## [1.1.4](https://github.com/IBM/container-registry-java-sdk/compare/1.1.3...1.1.4) (2024-11-18)
+
+
+### Bug Fixes
+
+* **project:** bump cross-spawn for CVE-2024-21538 ([5f5b976](https://github.com/IBM/container-registry-java-sdk/commit/5f5b976757a9a96649d2c12280d7f1f9439f382c))
+
 ## [1.1.3](https://github.com/IBM/container-registry-java-sdk/compare/1.1.2...1.1.3) (2024-07-18)
 
 
