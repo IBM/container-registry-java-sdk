@@ -79,12 +79,17 @@ jobs:
     name: semantic-release
     if: "github.ref_name == 'main' && github.event_name != 'pull_request'"
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # Required to create releases and push tags
+      issues: write    # Required for semantic-release to comment on issues
+      pull-requests: write  # Required for semantic-release to comment on PRs
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          persist-credentials: false
+          token: ${{ secrets.GH_TOKEN }}
+          fetch-depth: 0  # Required for semantic-release to analyze commit history
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -105,5 +110,3 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: npm run semantic-release
-
-# Made with Bob

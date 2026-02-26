@@ -15,12 +15,16 @@ jobs:
   publish-release:
     name: publish-release
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # Required to push to gh-pages branch
+      pages: write     # Required for GitHub Pages
+      id-token: write  # Required for OIDC
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          persist-credentials: false
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Java
         uses: actions/setup-java@v4
