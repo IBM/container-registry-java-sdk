@@ -43,13 +43,14 @@ jobs:
       - name: Set artifact version to ${{ github.ref_name }}
         run: mvn -B versions:set -DnewVersion=${{ github.ref_name }} -DgenerateBackupPoms=false
 
-      - name: Publish Javadocs
+      - name: Build and Generate Javadocs
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO_SLUG: ${{ github.repository }}
           GH_TAG: ${{ github.ref_name }}
         run: |
-          mvn -B clean javadoc:aggregate
+          mvn -B clean install -DskipTests
+          mvn -B javadoc:aggregate
           build/publishJavadocGHA.sh
 
       - name: Publish to Maven Central
