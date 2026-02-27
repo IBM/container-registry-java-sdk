@@ -1,14 +1,14 @@
-# This workflow will build and unit test the project.
-# If the workflow is running on the "main" branch, then
-# semantic-release is also run to create a new release (if
-# warranted by the new commits being built).
+# This workflow will:
+# 1. Detect secrets
+# 2. Build and unit test the project
+# 3. On main branch: run semantic-release to create a new release
+# 4. On main branch: if a new release was created, publish to Maven Central
 
 name: build
 
 on:
   push:
     branches: [ '**' ]
-    tags: [ '**' ]
   pull_request:
     branches: [ '**' ]
   workflow_dispatch:
@@ -83,6 +83,9 @@ jobs:
       contents: write  # Required to create releases and push tags
       issues: write    # Required for semantic-release to comment on issues
       pull-requests: write  # Required for semantic-release to comment on PRs
+    outputs:
+      new-release-published: ${{ steps.semantic-release.outputs.new-release-published }}
+      new-release-version: ${{ steps.semantic-release.outputs.new-release-version }}
 
     steps:
       - name: Checkout repository
@@ -109,6 +112,69 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
       - name: Run semantic-release
+        id: semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npm run semantic-release
+        run: |
+          npm run semantic-release
+          # Capture outputs from semantic-release
+          if git describe --exact-match --tags HEAD 2>/dev/null; then
+            VERSION=$(git describe --exact-match --tags HEAD)
+            echo "new-release-published=true" >> $GITHUB_OUTPUT
+            echo "new-release-version=${VERSION}" >> $GITHUB_OUTPUT
+          else
+            echo "new-release-published=false" >> $GITHUB_OUTPUT
+          fi
+
+  publish:
+    needs: create-release
+    name: publish-release
+    if: needs.create-release.outputs.new-release-published == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write  # Required to push to gh-pages branch
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.create-release.outputs.new-release-version }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          java-version: 11
+          distribution: 'adopt'
+          cache: 'maven'
+          # Configure ~/.m2/settings.xml
+          server-id: central
+          server-username: OSSRH_USERNAME
+          server-password: OSSRH_PASSWORD
+          # Import GPG key into build agent's local keystore
+          gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }}
+          gpg-passphrase: GPG_PASSPHRASE
+
+      - name: Set artifact version to ${{ needs.create-release.outputs.new-release-version }}
+        run: mvn -B versions:set -DnewVersion=${{ needs.create-release.outputs.new-release-version }} -DgenerateBackupPoms=false
+
+      - name: Build and Generate Javadocs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO_SLUG: ${{ github.repository }}
+          GH_TAG: ${{ needs.create-release.outputs.new-release-version }}
+        run: |
+          mvn -B clean install -DskipTests
+          mvn -B javadoc:aggregate
+          build/publishJavadocGHA.sh
+
+      - name: Publish to Maven Central
+        env:
+          OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
+          OSSRH_PASSWORD: ${{ secrets.OSSRH_PASSWORD }}
+          GPG_KEYNAME: ${{ secrets.GPG_KEYNAME }}
+          GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
+        run: |
+          mvn -B deploy -DskipTests -P central
+
