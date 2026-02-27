@@ -1,7 +1,7 @@
 [![Build Status](https://github.com/IBM/container-registry-java-sdk/actions/workflows/build.yml/badge.svg)](https://github.com/IBM/container-registry-java-sdk/actions/workflows/build.yml)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 
-# IBM Cloud Container Registry Java SDK Version 1.1.5
+# IBM Cloud Container Registry Java SDK Version 1.1.6
 Java client library to interact with the [IBM Cloud Container Registry API](https://cloud.ibm.com/apidocs/container-registry), and [IBM Cloud Container Registry Vulnerability Advisor API](https://cloud.ibm.com/apidocs/container-registry/va-v4)
 
 
@@ -39,8 +39,8 @@ The IBM Cloud Container Registry Java SDK allows developers to programmatically 
 
 Service Name | Artifact Coordinates
 --- | ---
-[Container Registry image management API](https://cloud.ibm.com/apidocs/container-registry) | com.ibm.cloud:container-registry:1.1.5
-[Container Registry Vulnerability Advisor API](https://cloud.ibm.com/apidocs/container-registry/va-v4) | com.ibm.cloud:vulnerability-advisor:1.1.5
+[Container Registry image management API](https://cloud.ibm.com/apidocs/container-registry) | com.ibm.cloud:container-registry:1.1.6
+[Container Registry Vulnerability Advisor API](https://cloud.ibm.com/apidocs/container-registry/va-v4) | com.ibm.cloud:vulnerability-advisor:1.1.6
 
 ## Prerequisites
 
@@ -51,7 +51,7 @@ Service Name | Artifact Coordinates
 * Java 8 or above.
 
 ## Installation
-The current version of this SDK is: 1.1.5
+The current version of this SDK is: 1.1.6
 
 Each service's artifact coordinates are listed in the table above.
 
@@ -70,19 +70,19 @@ Here are examples for maven and gradle:
 <dependency>
     <groupId>com.ibm.cloud</groupId>
     <artifactId>container-registry</artifactId>
-    <version>1.1.5</version>
+    <version>1.1.6</version>
 </dependency>
 <dependency>
     <groupId>com.ibm.cloud</groupId>
     <artifactId>vulnerability-advisor</artifactId>
-    <version>1.1.5</version>
+    <version>1.1.6</version>
 </dependency>
 ```
 
 ### Gradle
 ```gradle
-'com.ibm.cloud:container-registry:1.1.5'
-'com.ibm.cloud:vulnerability-advisor:1.1.5'
+'com.ibm.cloud:container-registry:1.1.6'
+'com.ibm.cloud:vulnerability-advisor:1.1.6'
 ```
 
 ## Using the SDK
