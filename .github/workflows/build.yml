@@ -77,7 +77,7 @@ jobs:
   create-release:
     needs: build
     name: semantic-release
-    if: "github.ref_name == 'main' && github.event_name != 'pull_request'"
+    if: "github.ref_name == 'main' && github.event_name != 'pull_request' && !contains(github.event.head_commit.message, '[skip ci]')"
     runs-on: ubuntu-latest
     permissions:
       contents: write  # Required to create releases and push tags
@@ -105,6 +105,8 @@ jobs:
         run: |
           pip install bump-my-version
           npm install
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
 
       - name: Run semantic-release
         env:
