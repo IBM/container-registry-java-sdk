@@ -95,8 +95,8 @@
 
     <!-- >>> Update these values to reflect your project -->
     <ciManagement>
-        <system>Travis-CI</system>
-        <url>https://travis-ci.com/IBM/container-registry-java-sdk/</url>
+        <system>GitHub Actions</system>
+        <url>https://github.com/IBM/container-registry-java-sdk/actions</url>
     </ciManagement>
 
     <!-- This section is commented out because we use an alternate deploy plugin.
@@ -369,15 +369,6 @@
                     <doctitle>${project.name}, version ${project.version}</doctitle>
                     <footer>IBM Corporation</footer>
                 </configuration>
-                <executions>
-                    <execution>
-                        <id>aggregate</id>
-                        <goals>
-                            <goal>aggregate</goal>
-                        </goals>
-                        <phase>package</phase>
-                    </execution>
-                </executions>
             </plugin>
             <plugin>
                 <groupId>org.jacoco</groupId>
@@ -454,31 +445,17 @@
         <profile>
             <id>central</id>
 
-            <!-- For this profile, we'll get dependencies from maven central -->
-            <repositories></repositories>
-
-            <distributionManagement>
-                <snapshotRepository>
-                    <!-- We don't deploy snapshot releases -->
-                </snapshotRepository>
-                <repository>
-                    <!-- This is where the nexus staging plugin will publish artifacts -->
-                    <id>ossrh</id>
-                    <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-                </repository>
-            </distributionManagement>
-
             <build>
                 <plugins>
                     <plugin>
-                        <groupId>org.sonatype.plugins</groupId>
-                        <artifactId>nexus-staging-maven-plugin</artifactId>
+                        <groupId>org.sonatype.central</groupId>
+                        <artifactId>central-publishing-maven-plugin</artifactId>
+                        <version>0.7.0</version>
                         <extensions>true</extensions>
                         <configuration>
-                            <serverId>ossrh</serverId>
-                            <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-                            <autoReleaseAfterClose>true</autoReleaseAfterClose>
-                            <keepStagingRepositoryOnCloseRuleFailure>true</keepStagingRepositoryOnCloseRuleFailure>
+                            <publishingServerId>central</publishingServerId>
+                            <autoPublish>true</autoPublish>
+                            <waitUntilPublished>true</waitUntilPublished>
                         </configuration>
                     </plugin>
                     <plugin>
@@ -498,13 +475,14 @@
                                 <gpgArgument>--batch</gpgArgument>
                                 <gpgArgument>--yes</gpgArgument>
                                 <gpgArgument>--no-tty</gpgArgument>
+                                <gpgArgument>--pinentry-mode</gpgArgument>
+                                <gpgArgument>loopback</gpgArgument>
                             </gpgArguments>
                         </configuration>
                     </plugin>
                 </plugins>
             </build>
             <properties>
-                <!-- Configure the gpg plugin to use the env vars defined in the Travis build settings -->
                 <gpg.keyname>${env.GPG_KEYNAME}</gpg.keyname>
                 <gpg.passphrase>${env.GPG_PASSPHRASE}</gpg.passphrase>
             </properties>
