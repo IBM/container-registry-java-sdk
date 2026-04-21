@@ -1,3 +1,10 @@
+## [1.1.5](https://github.com/IBM/container-registry-java-sdk/compare/1.1.4...1.1.5) (2025-08-06)
+
+
+### Bug Fixes
+
+* **project:** bump dependencies for CVE-2025-48924 ([d6e45fc](https://github.com/IBM/container-registry-java-sdk/commit/d6e45fcb59c40739a9e85a29623b57259f8d025a))
+
 ## [1.1.4](https://github.com/IBM/container-registry-java-sdk/compare/1.1.3...1.1.4) (2024-11-18)
 
 
